@@ -13,7 +13,7 @@ class Generator extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    formCreatingInfo = [
+    formBeginningInfo = [
         'var form = FormApp.create(\'请重命名表单\');',
         'var item;',
         'form.setIsQuiz(true);',
@@ -30,7 +30,8 @@ class Generator extends React.Component {
 
     handleChange(event) {
         var outputLines = map(event.target.value.split('\n'), translate).filter((line) => line !== '');
-        var output = reduce(outputLines, (memo, item) => { return memo + '\n' + item; }, this.formCreatingInfo);
+        var output = reduce(outputLines, (memo, item) => { return memo + '\n' + item; }, this.formBeginningInfo);
+        output = output + '\n' + this.formEndingInfo;
         this.setState({ outputValue: output });
     }
 
