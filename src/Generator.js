@@ -1,5 +1,5 @@
 import React from 'react';
-import _, { map, reduce } from 'underscore';
+import { map, reduce } from 'underscore';
 import { translate } from './Translator';
 
 class Generator extends React.Component {
@@ -13,9 +13,24 @@ class Generator extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+    formCreatingInfo = [
+        'var form = FormApp.create(\'请重命名表单\');',
+        'var item;',
+        'form.setIsQuiz(true);',
+        'form.setProgressBar(true);',
+        'form.setCollectEmail(true);',
+        'form.setAcceptingResponses(false);',
+    ].join('\n');
+
+    formEndingInfo = [
+        "Logger.log('Published URL: ' + form.getPublishedUrl());",
+        "Logger.log('Editor URL: ' + form.getEditUrl());",
+        "Logger.log('ID: ' + form.getId());",
+    ].join('\n');
+
     handleChange(event) {
-        var outputLines = map(event.target.value.split('\n'), translate);
-        var output = reduce(outputLines, function(memo, item){ return memo + '\n' + item; }, '');
+        var outputLines = map(event.target.value.split('\n'), translate).filter((line) => line !== '');
+        var output = reduce(outputLines, (memo, item) => { return memo + '\n' + item; }, this.formCreatingInfo);
         this.setState({ outputValue: output });
     }
 
