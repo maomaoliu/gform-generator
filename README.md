@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Google Form App Script Generator
+----------------------------------------------------------------
+用来将指定格式的文本转为 Google Form App Script
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 支持的格式：
 
-## Available Scripts
+### 单选
 
-In the project directory, you can run:
+[单选] 关于以下描述，以下说法正确的是：
 
-### `npm start`
+A 答案1。  
+B 答案2。  
+C 答案3.  
+D 答案4.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+答案：D  
+解析：解析详情（不支持换行）。  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 多选
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 单选
 
-### `npm run build`
+[多选] 关于以下描述，以下说法正确的是：
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A 答案1。  
+B 答案2。  
+C 答案3.  
+D 答案4.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+答案：ABD  
+解析：解析详情（不支持换行）。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 小节
 
-### `npm run eject`
+[分节] 小节标题
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+这一节描述了以下内容：  
+1. 第一行  
+2. 第二行  
+……  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[分节结束]
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 不支持的部分：
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GridItem：因为没有找到为这种类型的问题设置答案的API
+- 题目描述中添加Image：目前没有找到相关的API
+- 一些考试设置，如提交后立即公布分数：目前没有找到相关的API
