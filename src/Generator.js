@@ -1,5 +1,6 @@
 import React from 'react';
 import _, { map, reduce } from 'underscore';
+import { translate } from './Translator';
 
 class Generator extends React.Component {
     constructor(props) {
@@ -13,13 +14,9 @@ class Generator extends React.Component {
     }
 
     handleChange(event) {
-        var outputLines = map(event.target.value.split('\n'), this.translate);
+        var outputLines = map(event.target.value.split('\n'), translate);
         var output = reduce(outputLines, function(memo, item){ return memo + '\n' + item; }, '');
         this.setState({ outputValue: output });
-    }
-
-    translate(line, index) {
-        return line;
     }
 
     render() {
