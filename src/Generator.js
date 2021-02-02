@@ -19,7 +19,6 @@ class Generator extends React.Component {
         'form.setIsQuiz(true);',
         'form.setProgressBar(true);',
         'form.setCollectEmail(true);',
-        'form.setAcceptingResponses(false);',
     ].join('\n');
 
     formEndingInfo = [
