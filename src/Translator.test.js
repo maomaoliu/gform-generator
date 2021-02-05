@@ -96,6 +96,6 @@ describe('翻译分节描述行', () => {
     test('分节描述行 - 多行', () => {
         translate('1 就只是描述');
         translate('2 还是描述');
-        expect(translate('[分节结束]')).toEqual(expect.stringContaining('item.setHelpText(\'1 就只是描述\n2 还是描述\');'))
+        expect(translate('[分节结束]')).toEqual(expect.stringContaining('item.setHelpText(\'1 就只是描述\\n2 还是描述\');'))
     });
 });

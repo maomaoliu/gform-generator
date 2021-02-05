@@ -68,7 +68,7 @@ function translateTypeScript(itemType) {
         return 'item = form.addSectionHeaderItem();';
     }
     if (itemType === itemTypes.SectionDescEnd) {
-        return 'item.setHelpText(\''+ itemCache.join('\n') + '\');';
+        return 'item.setHelpText(\''+ itemCache.join('\\n') + '\');';
     }
 }
 
